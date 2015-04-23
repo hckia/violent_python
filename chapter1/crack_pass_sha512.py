@@ -1,12 +1,10 @@
-import crypt
+import hashlib
 
 def testPass(cryptPass):
-	salt = cryptPass[0:2]
-	print salt
 	dictFile = open('dictionary.txt', 'r')
 	for word in dictFile.readlines():
 		word = word.strip('\n')
-		cryptWord = crypt.crypt(word,salt)
+		cryptWord = hashlib.sha512(word).hexdigest()
 		if (cryptWord == cryptPass):
 			print "[+] Found Password: "+word+"\n"
 			return
