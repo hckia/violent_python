@@ -25,7 +25,7 @@ def main():
 	portList = [21,22,25,80,110,443]
 	#ip = '208.113.192.172' <--- you can add this and comment out the for
 	#loop and ip value below.
-	for x in range(1, 255)
+	for x in range(1, 255):
 		ip = '192.168.95.'+ str(x)
 		for port in portList:
 			banner = retBanner(ip, port)
